@@ -5,4 +5,4 @@ dependencies:
   - name: groundcover
     version: 1.6.6
     repository: https://helm.groundcover.com/
-    
+    chart: groundcover/groundcover

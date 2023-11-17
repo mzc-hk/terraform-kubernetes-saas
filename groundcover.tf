@@ -3,7 +3,7 @@ locals {
         local.helm_defaults,
         {
           name                   = local.helm_dependencies[index(local.helm_dependencies.*.name, "groundcover")].name
-          chart                  = local.helm_dependencies[index(local.helm_dependencies.*.name, "groundcover")].name
+          chart                  = local.helm_dependencies[index(local.helm_dependencies.*.name, "groundcover")].chart
           repository             = local.helm_dependencies[index(local.helm_dependencies.*.name, "groundcover")].repository
           chart_version          = local.helm_dependencies[index(local.helm_dependencies.*.name, "groundcover")].version
           namespace              = "groundcover"
