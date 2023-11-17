@@ -4,5 +4,5 @@ version: 1.0.0
 dependencies:
   - name: groundcover
     version: 1.6.6
-    repository: https://helm.groundcover.com/
+    # repository: https://helm.groundcover.com/
     chart: https://github.com/groundcover-com/helm-charts/releases/download/groundcover-1.6.6/groundcover-1.6.6.tgz
