@@ -9,3 +9,9 @@ variable "labels_prefix" {
   type        = string
   default     = "mzc-hk-demo.com"
 }
+
+variable "helm_defaults" {
+  description = "Customize default Helm behavior"
+  type        = any
+  default     = {}
+}
