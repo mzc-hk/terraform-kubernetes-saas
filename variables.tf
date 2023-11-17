@@ -4,3 +4,8 @@ variable "groundcover" {
   default     = {}
 }
 
+variable "labels_prefix" {
+  description = "Custom label prefix used for network policy namespace matching"
+  type        = string
+  default     = "mzc-hk-demo.com"
+}
