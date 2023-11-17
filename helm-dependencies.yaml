@@ -1,0 +1,8 @@
+apiVersion: v2
+name: Handle terraform-kubernetes-third-party-helm helm chart dependencies update
+version: 1.0.0
+dependencies:
+  - name: groundcover
+    version: 1.6.6
+    repository: https://helm.groundcover.com/
+    
