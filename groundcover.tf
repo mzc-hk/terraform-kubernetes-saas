@@ -53,7 +53,7 @@ resource "helm_release" "groundcover" {
     skip_crds               = local.groundcover["skip_crds"]
     verify                  = local.groundcover["verify"]
     values                  = []
-    namespace               = local.groundcover["create_ns"] ? kubernetes_namespace.groundcover.*.metadata.0.name[count.index] : local.groundcover["namespace"]
+    namespace               = kubernetes_namespace.groundcover.*.metadata.0.name[count.index]
     
     set {
         name  = "global.groundcover_token"
