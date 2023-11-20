@@ -3,8 +3,8 @@ locals {
         local.helm_defaults,
         {
           name                   = local.helm_dependencies[index(local.helm_dependencies.*.name, "groundcover")].name
-          chart                  = local.helm_dependencies[index(local.helm_dependencies.*.name, "groundcover")].chart
-          # repository             = local.helm_dependencies[index(local.helm_dependencies.*.name, "groundcover")].repository
+          chart                  = local.helm_dependencies[index(local.helm_dependencies.*.name, "groundcover")].name
+          repository             = local.helm_dependencies[index(local.helm_dependencies.*.name, "groundcover")].repository
           chart_version          = local.helm_dependencies[index(local.helm_dependencies.*.name, "groundcover")].version
           namespace              = "groundcover"
           enabled                = true
@@ -33,7 +33,7 @@ resource "kubernetes_namespace" "groundcover" {
 }
 resource "helm_release" "groundcover" {
     count                   = local.groundcover["enabled"] ? 1 : 0
-    # repository              = local.groundcover["repository"]
+    repository              = local.groundcover["repository"]
     name                    = local.groundcover["name"]
     chart                   = local.groundcover["chart"]
     version                 = local.groundcover["chart_version"]
